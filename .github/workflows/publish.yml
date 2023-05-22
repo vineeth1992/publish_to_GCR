@@ -44,7 +44,7 @@ jobs:
 
       - name: Build and push Docker image
       - run: |
-                  docker build -f ./Dockerfile -t Docker_testfile
-                  docker push ghcr.io/Vineeth/Docker_testfile:latest
-                  git tag ${{ inputs.imageTag }}
-                  git push origin ${{ inputs.imageTag }}
+              docker build -f ./Dockerfile -t Docker_testfile
+              docker push ghcr.io/Vineeth/Docker_testfile:latest
+              git tag ${{ inputs.imageTag }}
+              git push origin ${{ inputs.imageTag }}
