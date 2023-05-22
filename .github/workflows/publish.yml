@@ -39,6 +39,6 @@ jobs:
       
       - name: Build and push Docker image
         run: |
-              docker build . --tag ghcr.io/publish_to_gcr/hello-docker-gcr-demo:latest
-              docker run ghcr.io/publish_to_gcr/hello-docker-gcr-demo:latest
-              docker push ghcr.io/publish_to_gcr/hello-docker-gcr-demo:latest
+              docker build . --tag ghcr.io/hello-docker-gcr-demo:latest
+              docker run ghcr.io/hello-docker-gcr-demo:latest
+              docker push ghcr.io/hello-docker-gcr-demo:latest
