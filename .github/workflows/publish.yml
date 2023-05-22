@@ -43,9 +43,8 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+      - run: |
+                  docker build -f ./Dockerfile -t Docker_testfile
+                  docker push ghcr.io/Vineeth/Docker_testfile:latest
+                  git tag ${{ inputs.imageTag }}
+                  git push origin ${{ inputs.imageTag }}
